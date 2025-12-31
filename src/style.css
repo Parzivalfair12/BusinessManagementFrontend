@@ -1,0 +1,14 @@
+/* Global reset to ensure full-bleed layout and remove default body margins */
+:root,
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}

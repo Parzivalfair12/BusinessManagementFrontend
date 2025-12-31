@@ -1,0 +1,148 @@
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background: radial-gradient(1200px 800px at 10% 20%, rgba(31, 63, 136, 0.25), transparent 10%),
+        linear-gradient(180deg, #0a1538 0%, #071033 100%);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Card */
+.login-form .card {
+    width: 420px;
+    max-width: calc(100% - 48px);
+    background: linear-gradient(180deg, rgba(16, 32, 103, 0.95), rgba(7, 10, 20, 0.95));
+    border-radius: 14px;
+    padding: 40px 36px;
+    box-shadow: 0 12px 40px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    color: #e6eefc;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Brand */
+.login-form .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-form .brand .icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: linear-gradient(180deg, #1f3f88, #102067);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(16, 32, 103, 0.45);
+}
+
+.login-form .brand h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f9ff;
+}
+
+.login-form .subtitle {
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: rgba(230, 238, 252, 0.6);
+    font-size: 14px;
+}
+
+/* Form */
+.login-form .form {
+    display: grid;
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    color: rgba(230, 238, 252, 0.75);
+    font-size: 13px;
+}
+
+.login-form label span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(3, 8, 24, 0.5);
+    color: #eaf3ff;
+    outline: none;
+    font-size: 14px;
+    transition: box-shadow .18s, border-color .18s, transform .08s;
+}
+
+.login-form input::placeholder {
+    color: rgba(234, 243, 255, 0.18);
+}
+
+.login-form input:focus {
+    border-color: rgba(31, 63, 136, 0.9);
+    box-shadow: 0 6px 18px rgba(31, 63, 136, 0.16);
+    transform: translateY(-1px);
+}
+
+/* Button */
+.login-form .btn {
+    margin-top: 6px;
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #1f3f88 0%, #172f77 40%, #102067 100%);
+    box-shadow: 0 10px 26px rgba(16, 32, 103, 0.45), 0 2px 0 rgba(255, 255, 255, 0.02) inset;
+    transition: transform .12s, box-shadow .12s, opacity .12s;
+}
+
+.login-form .btn:active {
+    transform: translateY(1px);
+}
+
+.login-form .btn:hover {
+    box-shadow: 0 14px 34px rgba(16, 32, 103, 0.55);
+}
+
+/* Demo note */
+.login-form .demo {
+    margin-top: 18px;
+    color: rgba(234, 243, 255, 0.35);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .login-form .card {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+
+    .login-form .brand h1 {
+        font-size: 22px;
+    }
+}
+
+/* Keep overflow change local */
+.login-form {
+    overflow: hidden;
+}

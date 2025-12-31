@@ -1,0 +1,170 @@
+/* NavBar-specific styles, namespaced under .navbar-root */
+
+.navbar-root {
+    --c-primary: #1f3f88;
+    --c-mid: #172f77;
+    --c-deep: #102067;
+    --c-deeper: #000045;
+    --bg-start: rgba(10, 16, 34, 0.95);
+    --bg-end: rgba(2, 6, 18, 0.95);
+}
+
+.navbar-root.navbar {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6);
+    color: #e6eefc;
+    min-height: 100vh;
+}
+
+/* Brand */
+.navbar-root .brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.navbar-root .logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--c-primary), var(--c-deep));
+    box-shadow: 0 8px 18px rgba(31, 63, 136, 0.28);
+    font-size: 18px;
+}
+
+.navbar-root .brand-text .name {
+    font-weight: 700;
+}
+
+.navbar-root .brand-text .subtitle {
+    font-size: 12px;
+    color: rgba(230, 238, 252, 0.6);
+}
+
+/* Menu */
+.navbar-root .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+    flex: 1;
+}
+
+.navbar-root .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(234, 243, 255, 0.85);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .08s, box-shadow .14s, background .14s;
+}
+
+.navbar-root .item .icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    color: rgba(234, 243, 255, 0.72);
+}
+
+.navbar-root .item .label {
+    flex: 1;
+}
+
+/* Active */
+.navbar-root .item.active {
+    background: linear-gradient(90deg, var(--c-primary), var(--c-mid));
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(31, 63, 136, 0.18);
+}
+
+/* Hover */
+.navbar-root .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(16, 32, 103, 0.12);
+}
+
+.navbar-root .item:not(.active):hover {
+    background: linear-gradient(90deg, var(--c-primary), var(--c-mid));
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(31, 63, 136, 0.18);
+}
+
+/* User area bottom */
+.navbar-root .user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navbar-root .user-box {
+    background: linear-gradient(180deg, rgba(3, 8, 24, 0.6), rgba(6, 8, 18, 0.6));
+    padding: 12px;
+    border-radius: 10px;
+    color: rgba(234, 243, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.navbar-root .user-email {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* logout */
+.navbar-root .logout {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(234, 243, 255, 0.85);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.navbar-root .logout svg {
+    color: rgba(234, 243, 255, 0.7);
+}
+
+.navbar-root .logout:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-1px);
+}
+
+/* Responsive small screens */
+@media (max-width: 900px) {
+    .navbar-root.navbar {
+        width: 72px;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .navbar-root .brand-text {
+        display: none;
+    }
+
+    .navbar-root .item .label {
+        display: none;
+    }
+
+    .navbar-root .user-box {
+        display: none;
+    }
+}
