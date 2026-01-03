@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
-import { useAuthStore } from '../stores/auth.store';
-
 import Login from '../views/Login.vue';
 import DashBoard from '../views/DashBoard.vue';
+import Companies from '../views/administration/Companies.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,6 +17,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dashboard',
     name: 'DashBoard',
     component: DashBoard,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/companies',
+    name: 'Companies',
+    component: Companies,
     meta: { requiresAuth: true }
   }
 ];

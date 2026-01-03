@@ -9,7 +9,7 @@
     --bg-end: rgba(2, 6, 18, 0.95);
 }
 
-.navbar-root.navbar {
+.navbar-root {
     width: 260px;
     display: flex;
     flex-direction: column;
@@ -72,6 +72,7 @@
     text-align: left;
     cursor: pointer;
     font-weight: 600;
+    font-size: 14px;
     transition: transform .08s, box-shadow .14s, background .14s;
 }
 
@@ -105,11 +106,78 @@
     box-shadow: 0 10px 26px rgba(31, 63, 136, 0.18);
 }
 
+/* Administración section styles */
+.navbar-root .admin-section {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navbar-root .admin-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #2067ff, #1a4fd6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 12px 30px rgba(32, 103, 255, 0.18);
+}
+
+.navbar-root .admin-header .icon {
+    width: 20px;
+    height: 20px;
+    color: rgba(255,255,255,0.95);
+}
+
+.navbar-root .admin-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 8px;
+}
+
+.navbar-root .subitem {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: transparent;
+    color: rgba(230,238,252,0.8);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar-root .subitem .bullet {
+    width: 10px;
+    color: rgba(178,190,255,0.9);
+    font-size: 12px;
+}
+
+.navbar-root .slabel {
+    font-size: 14px;
+}
+
+.navbar-root .subitem.selected {
+    background: linear-gradient(90deg, #0b2a66, #132f6a);
+    color: #cfe1ff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 8px 20px rgba(8,20,56,0.35);
+}
+
 /* User area bottom */
 .navbar-root .user {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: auto;
 }
 
 .navbar-root .user-box {
@@ -150,7 +218,7 @@
 
 /* Responsive small screens */
 @media (max-width: 900px) {
-    .navbar-root.navbar {
+    .navbar-root {
         width: 72px;
         padding: 12px;
         gap: 12px;

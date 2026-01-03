@@ -1,0 +1,221 @@
+/* ===== Layout principal ===== */
+
+.companies {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #060a18;
+}
+
+/* Sidebar (usa tu CSS actual) */
+.companies .navbar-root {
+  flex-shrink: 0; /* evita que se encoja */
+}
+
+/* ===== Contenido principal ===== */
+
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-group h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #eaf3ff;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: rgba(234, 243, 255, 0.6);
+  margin-top: 6px;
+}
+
+/* ===== Card ===== */
+
+.card {
+  background: linear-gradient(180deg, rgba(7,16,51,0.5), rgba(3,6,18,0.5));
+  border-radius: 12px;
+  padding: 20px;
+  color: #eaf3ff;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.35);
+}
+
+/* Table card & grid integration */
+.table-card {
+  background: linear-gradient(180deg, rgba(7,12,28,0.6), rgba(3,8,22,0.5)) !important;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.025);
+  box-shadow: 0 8px 24px rgba(3,8,20,0.45);
+}
+
+.table-card .table-responsive {
+  background: transparent;
+}
+
+.table-card .table {
+  color: rgba(234,243,255,0.95);
+}
+
+/* Strong overrides to prevent Bootstrap from forcing white backgrounds */
+.table-card, .table-card.card, .table-card.card .card-body {
+  background: linear-gradient(180deg, rgba(7,12,28,0.6), rgba(3,8,22,0.5)) !important;
+  color: rgba(234,243,255,0.95) !important;
+}
+
+/* Ensure table elements are transparent and inherit our background */
+.table-card table,
+.table-card thead,
+.table-card tbody,
+.table-card tr,
+.table-card th,
+.table-card td {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* If Bootstrap applies .bg-white or similar, override it inside table-card */
+.table-card .bg-white {
+  background-color: transparent !important;
+}
+
+.table-card .table thead th {
+  color: #9fbfe0;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding-bottom: 18px;
+}
+
+.table-card .table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  background: transparent;
+}
+
+.table-card .table tbody tr:hover {
+  background: rgba(12,20,36,0.06);
+}
+
+.table-card .table td, .table-card .table th {
+  vertical-align: middle;
+  padding: 18px 14px;
+}
+
+/* Search input styling integrated with background */
+.companies .search-input,
+.table-card .search-input {
+  background: rgba(6,10,20,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.035) !important;
+  color: #eaf3ff !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+
+.companies .search-input::placeholder,
+.table-card .search-input::placeholder {
+  color: rgba(234,243,255,0.45) !important;
+}
+
+.table-card .badge {
+  /* pill style matching design: dark rounded capsule with bright green text */
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(7,95,58,0.18), rgba(3,55,36,0.22));
+  color: #34d399; /* bright green text */
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: lowercase;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12);
+}
+
+/* Override bootstrap background utility classes inside the table card */
+.table-card .badge.bg-success,
+.table-card .badge.bg-secondary {
+  background: linear-gradient(180deg, rgba(7,95,58,0.18), rgba(3,55,36,0.22)) !important;
+  color: #34d399 !important;
+  border-radius: 999px !important;
+  padding: 6px 12px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  text-transform: lowercase !important;
+}
+
+/* Stat cards should visually match the table card */
+.stat-card {
+  background: linear-gradient(180deg, rgba(7,12,28,0.6), rgba(3,8,22,0.5)) !important;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.025);
+  box-shadow: 0 8px 24px rgba(3,8,20,0.45);
+  color: rgba(234,243,255,0.95);
+}
+
+.stat-card .stat-label { color: rgba(234,243,255,0.68); }
+.stat-card .stat-value { color: #eaf3ff; font-weight: 800; }
+
+/* Action icon buttons */
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn svg { width: 18px; height: 18px; }
+.action-btn.edit svg { color: #3b82f6; }
+.action-btn.delete svg { color: #ef4444; }
+
+/* Style bootstrap icon buttons in table header */
+.table-card .btn-edit .bi {
+  font-size: 18px;
+  color: #3b82f6;
+}
+
+.table-card .btn-delete .bi {
+  font-size: 18px;
+  color: #ef4444;
+}
+
+
+/* Make header and search share the same horizontal band look */
+.table-card .d-flex.justify-content-between {
+  align-items: center;
+}
+
+/* Right-align the search box inside the card header */
+.table-card .search-input { min-width: 200px; max-width: 700px; }
+
+/* ===== Responsive ===== */
+
+@media (max-width: 900px) {
+  .companies {
+    flex-direction: column;
+  }
+
+  .navbar-root.navbar {
+    width: 100%;
+    min-height: auto;
+  }
+}
